@@ -39,6 +39,9 @@
     "src/**/*.{svg,scss,css,js,map}",
     "dist/**/*.{css,js,map}"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@massimo-cassandro/dev-utils": "^1.3.0",
     "@massimo-cassandro/linters-config": "^1.0.0",
