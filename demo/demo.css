@@ -1,0 +1,45 @@
+:root {
+  --success-color: #297e2d;
+  --warning-color: #c00;
+  --info-color: #0288d1;
+  --error-color: #c00;
+  --confirm-color: #8720c5;
+
+}
+html {
+  font-family: sans-serif;
+}
+
+.demo-buttons .btn {
+  --malert-color: rgb(16, 89, 162);
+  margin: 1rem;
+}
+
+
+/* applied to body on dialog opening */
+.modal-alert-is-open {
+  overflow: hidden;
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.btn {
+  padding: .5rem 1rem;
+  color: #fff;
+  background-color: var(--malert-color);
+  border: 1px solid  var(--malert-color);
+  border-radius: 4px;
+}
+.btn-outline {
+  color: var(--malert-color);
+  background-color: #fff;
+}
+.btn:focus {
+  outline: 1px solid var(--malert-color);
+  outline-offset: 3px;
+}
+.btn:hover {
+
+}

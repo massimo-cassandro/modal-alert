@@ -1,0 +1,145 @@
+import confirm_mark from './svg/confirm.svg';
+import info_mark from './svg/info.svg';
+import error_mark from './svg/error.svg';
+import success_mark from './svg/success.svg';
+import warning_mark from './svg/warning.svg';
+
+import {defaults} from './js/defaults';
+
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
+
+const marks = {
+  confirm: confirm_mark,
+  info: info_mark,
+  error: error_mark,
+  success: success_mark,
+  warning: warning_mark
+};
+
+let parsed_defaults = {};
+
+export function setDefaults(custom_defaults = {}) {
+  parsed_defaults = {...defaults, ...custom_defaults};
+}
+
+export default function (params) {
+
+  try {
+
+    // garbage collection
+    let dialog = document.querySelector('.modal-alert');
+    if(dialog) {
+      dialog.remove();
+    }
+
+
+    params = {...(parsed_defaults.globals?? defaults.globals), ...(parsed_defaults[params.type]?? defaults[params.type]), ...params};
+
+    if(!params.type || Object.keys(defaults).filter(item => item !== 'global').indexOf(params.type) === -1) {
+      throw 'Missing or incorrect `type` parameter';
+    }
+
+    if(params.type === 'confirm' && params.callback && typeof params.callback !== 'function') {
+      throw 'Incorrect `callback` parameter';
+    }
+    if(params.onOpen && typeof params.onOpen !== 'function') {
+      throw 'Incorrect `onOpen` parameter';
+    }
+    if(params.onClose && typeof params.onClose !== 'function') {
+      throw 'Incorrect `onClose` parameter';
+    }
+
+
+    if(!params.title) {
+      throw '`title` parameter not present';
+    }
+
+    document.body.insertAdjacentHTML('beforeend',
+      `<dialog class="modal-alert" style='--malert-color: ${params.color}'>
+        <div class="malert-inner">
+          <div class="malert-mark">
+            ${marks[params.type]}
+          </div>
+          <div class="malert-body">
+            <div class="malert-heading ${params.heading_class?? ''}">${params.title}</div>
+            <div class="malert-text ${params.text_class?? ''}">${params.mes?? ''}</div>
+            <div class="malert-btns">
+              <button type="button" class="malert-ok ${params.ok_btn_class}">
+                ${params.ok_btn_text}
+              </button>
+              ${params.type === 'confirm'?
+                `<button type="button" class="malert-cancel ${params.cancel_btn_class}">
+                  ${params.cancel_btn_text}
+                </button>`
+              : ''}
+            </div>
+          </div>
+        </div>
+      </dialog>`
+    );
+
+    dialog = document.querySelector('.modal-alert');
+
+    dialog.showModal();
+
+    // btn focus
+    const ok_btn = dialog.querySelector('.malert-ok'),
+      cancel_btn = dialog.querySelector('.malert-cancel');
+
+    if(cancel_btn && params.cancel_focus) {
+      cancel_btn.focus();
+    } else {
+      ok_btn.focus();
+    }
+
+    if(params.onOpen && typeof params.onOpen === 'function') {
+      params.onOpen();
+    }
+
+    let timeoutID;
+    const dialogDismiss = () => {
+      dialog.remove();
+
+      if(params.onClose && typeof params.onClose === 'function') {
+        params.onClose();
+      }
+
+      if(timeoutID) {
+        window.clearTimeout(timeoutID);
+      }
+    };
+
+    if( params.timer && params.type !== 'confirm') {
+      timeoutID = window.setTimeout( function() {
+        dialogDismiss();
+      }, params.timer);
+    }
+
+    dialog.addEventListener('close', () => {
+      dialogDismiss();
+    }, false);
+
+    dialog.addEventListener('cancel', () => {
+      dialogDismiss();
+    }, false);
+
+    [ok_btn, cancel_btn].forEach(btn => {
+
+      btn.addEventListener('click', () => {
+
+        dialogDismiss();
+
+        if(params.type === 'confirm' && params.callback && typeof params.callback === 'function') {
+          params.callback(btn.classList.contains('malert-ok'));
+        }
+
+      }, false);
+
+    });
+
+
+  } catch(e) {
+    console.error( e ); // eslint-disable-line
+  }
+
+}
