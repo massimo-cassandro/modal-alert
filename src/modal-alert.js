@@ -49,6 +49,12 @@ export default function (params) {
       throw 'Incorrect `onClose` parameter';
     }
 
+    if(params.cssFile && !document.querySelector(`link[href='${params.cssFile}']`)) {
+      document.head.insertAdjacentHTML('beforeend',
+        `<link rel="stylesheet" href="${params.cssFile}" type="text/css">`
+      );
+    }
+
 
     if(!params.title) {
       throw '`title` parameter not present';
@@ -125,7 +131,7 @@ export default function (params) {
 
     [ok_btn, cancel_btn].forEach(btn => {
 
-      btn.addEventListener('click', () => {
+      btn?.addEventListener('click', () => {
 
         dialogDismiss();
 

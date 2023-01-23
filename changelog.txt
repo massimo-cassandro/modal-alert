@@ -1,0 +1,2 @@
+     1.0.0 | 2023-01-23T17:00:00.000Z | First release
+     1.0.1 | 2023-01-23T20:26:22.453Z | Added `cssFile` option

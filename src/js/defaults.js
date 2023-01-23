@@ -4,7 +4,8 @@ export const defaults = {
   // can be reassigned on single types
   globals: {
     onOpen: null,
-    onClose: null
+    onClose: null,
+    cssFile: null    // css file to be automatically loaded
   },
 
   success: {

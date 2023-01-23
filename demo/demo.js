@@ -5,13 +5,14 @@ setDefaults({
   //settings to be applied to all dialog types
   globals: {
     onOpen: () => {
-      console.log('open'); // eslint-disable-line
+      // console.log('open'); // eslint-disable-line
       document.body.classList.add('modal-alert-is-open');
     },
     onClose: () => {
-      console.log('close'); // eslint-disable-line
+      // console.log('close'); // eslint-disable-line
       document.body.classList.remove('modal-alert-is-open');
-    }
+    },
+    cssFile: '/dist/modal-alert.css'
   },
 
   success: {
@@ -139,7 +140,7 @@ document.getElementById('test-form2').addEventListener('submit', e => {
     e.preventDefault();
     mAlert({
       type  : 'error',
-      title: 'Oh Oh, there is an error...',
+      title: 'Oh my! There is an error...',
       mes: 'Some message'
     });
   }
