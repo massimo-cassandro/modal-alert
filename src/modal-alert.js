@@ -19,7 +19,9 @@ const marks = {
 let parsed_defaults = {};
 
 export function setDefaults(custom_defaults = {}) {
-  parsed_defaults = {...defaults, ...custom_defaults};
+  Object.keys(defaults).forEach(item => {
+    parsed_defaults[item] = {...defaults[item], ...(custom_defaults[item]?? {})};
+  });
 }
 
 export default function (params) {
@@ -61,7 +63,7 @@ export default function (params) {
     }
 
     document.body.insertAdjacentHTML('beforeend',
-      `<dialog class="modal-alert modal-alert-${params.type}">
+      `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}">
         <div class="malert-inner">
           <div class="malert-mark">
             ${marks[params.type]}

@@ -135,3 +135,22 @@
     justify-content: space-between;
   }
 }
+
+
+.modal-alert-animated {
+  transform: translateY(-500%);
+  animation: dialog-in .3s ease-out;
+
+  &[open] {
+    transform: none;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    transform: translateY(-500%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

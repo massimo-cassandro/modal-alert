@@ -5,7 +5,8 @@ export const defaults = {
   globals: {
     onOpen: null,
     onClose: null,
-    cssFile: null    // css file to be automatically loaded
+    cssFile: null,    // css file to be automatically loaded
+    animation: true
   },
 
   success: {
