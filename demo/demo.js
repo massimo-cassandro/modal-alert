@@ -22,7 +22,6 @@ setDefaults({
     heading_class: 'text-success',
     ok_btn_class: 'btn',
     timer: 4000, // ms
-    color: 'var(--success-color)'
   },
   error: {
     title: 'An error has occurred',
@@ -32,7 +31,6 @@ setDefaults({
     text_class: null,
     ok_btn_class: 'btn',
     timer: null,
-    color: 'var(--error-color)'
   },
   warning: {
     title: 'Attention!',
@@ -42,7 +40,6 @@ setDefaults({
     text_class: null,
     ok_btn_class: 'btn',
     timer: null,
-    color: 'var(--warning-color)'
   },
   info: {
     title: null,
@@ -52,7 +49,6 @@ setDefaults({
     text_class: null,
     ok_btn_class: 'btn',
     timer: null,
-    color: 'var(--info-color)'
   },
   confirm: {
     title: 'Do you confirm?',
@@ -66,7 +62,6 @@ setDefaults({
     cancel_btn_class: 'btn btn-outline',
     callback: null,
     timer: null,
-    color: 'var(--confirm-color)'
   }
 });
 

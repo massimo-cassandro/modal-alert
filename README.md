@@ -5,10 +5,19 @@ Vanilla JS modal alert
 
 ### add the css file to your page**
 
-Optionally, add this custom properties to your page (or edit directly the css file). See the css file for default values:
+Optionally, add this custom properties to your page (see the `src/modal-alert.scss` file for default values):
 
+* `--malert-success-color`: success color
+* `--malert-success-color-fg`: success color foreground
+* `--malert-info-color`: info color
+* `--malert-info-color-fg`: info color foreground
+* `--malert-warning-color`: warning color
+* `--malert-warning-color-fg`: warning color foreground
+* `--malert-error-color`: error color
+* `--malert-error-color-fg`: error color foreground
+* `--malert-confirm-color`: confirm color
+* `--malert-confirm-color-fg`: confirm color foreground
 * `--malert-marks-stroke-width`: stroke width for svg marks
-* `--malert-marks-stroke-color`: stroke width for svg marks
 * `--malert-backdrop`: dialog backdrop color
 * `--malert-border-radius`: dialog border radius
 * `--malert-box-shadow`: dialog box shadow
@@ -45,11 +54,7 @@ mAlert({
   // classes to be added to relative element (default `null`)
   heading_class     : 'text-success',
   ok_btn_class      : 'btn-success',
-  cancel_btn_class  : 'btn-outline-warning',
-
-  // color for type, can be a color string or a css custom property
-  color             : 'var(--success-color)'
-
+  cancel_btn_class  : 'btn-outline-warning'
 });
 ```
 
@@ -58,7 +63,6 @@ The default settings for each type can be viewed in the `./src/js/defaults.js` f
 
 The special type `global`, if present, contains settings to be applied to all other types.
 
-#### Customizing
+### Customizing
 
 See demo
-

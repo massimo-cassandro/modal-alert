@@ -1,10 +1,24 @@
 :root {
-  --success-color: #297e2d;
-  --warning-color: #c00;
-  --info-color: #0288d1;
-  --error-color: #c00;
-  --confirm-color: #8720c5;
+  /* comment to use defaults */
+  --malert-success-color: #09544b;
+  --malert-success-color-fg: #fff;
+  --malert-info-color: #0e2467;
+  --malert-info-color-fg: #fff;
+  --malert-warning-color: hsl(56deg 100% 30%);
+  --malert-warning-color-fg: #fff;
+  --malert-error-color: #c00;
+  --malert-error-color-fg: #fff;
+  --malert-confirm-color: #940b7f;
+  --malert-confirm-color-fg: #fff;
 
+  /* --malert-marks-stroke-width: 6px; */
+  /* --malert-backdrop */
+  /* --malert-border-radius */
+  /* --malert-box-shadow */
+  /* --malert-heading-font-family */
+  /* --malert-heading-font-size */
+  /* --malert-heading-font-weigth */
+  /* --malert-body-font-family */
 }
 html {
   font-family: sans-serif;
@@ -12,6 +26,7 @@ html {
 
 .demo-buttons .btn {
   --malert-color: rgb(16, 89, 162);
+  --malert-color-fg: #fff;
   margin: 1rem;
 }
 
@@ -22,19 +37,21 @@ html {
 }
 
 .text-success {
-  color: var(--success-color);
+  color: var(--malert-success-color);
 }
+
+/* `--malert-color` & `--malert-color-fg` are set by main css */
 
 .btn {
   padding: .5rem 1rem;
-  color: #fff;
+  color: var(--malert-color-fg);
   background-color: var(--malert-color);
   border: 1px solid  var(--malert-color);
   border-radius: 4px;
 }
 .btn-outline {
   color: var(--malert-color);
-  background-color: #fff;
+  background-color: var(--malert-color-fg);
 }
 .btn:focus {
   outline: 1px solid var(--malert-color);

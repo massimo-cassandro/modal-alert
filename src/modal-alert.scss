@@ -28,7 +28,29 @@
   &, * {
     box-sizing: border-box;
   }
+
+  &.modal-alert-success {
+    --malert-color: var(--malert-success-color, hsl(123deg 51% 33%));
+    --malert-color-fg: var(--malert-success-color-fg, #fff);
+  }
+  &.modal-alert-info {
+    --malert-color: var(--malert-info-color, hsl(201deg 98% 41%));
+    --malert-color-fg: var(--malert-info-color-fg, #fff);
+  }
+  &.modal-alert-warning {
+    --malert-color: var(--malert-warning-color, hsl(29deg 99% 40%));
+    --malert-color-fg: var(--malert-warning-color-fg, #fff);
+  }
+  &.modal-alert-error {
+    --malert-color: var(--malert-error-color, hsl(0deg 100% 40%));
+    --malert-color-fg: var(--malert-error-color-fg, #fff);
+  }
+  &.modal-alert-confirm {
+    --malert-color: var(--malert-confirm-color, hsl(277deg 72% 45%));
+    --malert-color-fg: var(--malert-confirm-color-fg, #fff);
+  }
 }
+
 .malert-inner {
   display: flex;
   flex-flow: column nowrap;
@@ -55,7 +77,7 @@
     width: 40px;
     aspect-ratio: 1;
     fill: none;
-    stroke: var(--malert-marks-stroke-color, #fff);
+    stroke: var(--malert-color-fg);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: var(--malert-marks-stroke-width, 6px);

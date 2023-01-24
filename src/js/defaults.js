@@ -15,8 +15,7 @@ export const defaults = {
     heading_class: null,
     text_class: null,
     ok_btn_class: 'btn btn-success',
-    timer: 4000, // ms
-    color: '#297e2d'
+    timer: 4000 // ms
   },
   error: {
     title: 'Si è verificato un errore',
@@ -25,8 +24,7 @@ export const defaults = {
     heading_class: null,
     text_class: null,
     ok_btn_class: 'btn btn-error',
-    timer: null,
-    color: '#c00'
+    timer: null
   },
   warning: {
     title: 'Attenzione!',
@@ -35,8 +33,7 @@ export const defaults = {
     heading_class: null,
     text_class: null,
     ok_btn_class: 'btn btn-warning',
-    timer: null,
-    color: '#c00'
+    timer: null
   },
   info: {
     title: null,
@@ -45,8 +42,7 @@ export const defaults = {
     heading_class: null,
     text_class: null,
     ok_btn_class: 'btn btn-info',
-    timer: null,
-    color: '#0288D1'
+    timer: null
   },
   confirm: {
     title: 'Confermi?',
@@ -59,8 +55,7 @@ export const defaults = {
     ok_btn_class: 'btn btn-confirm',
     cancel_btn_class: 'btn btn-outline-confirm',
     callback: null,
-    timer: null,
-    color: '#8720c5'
+    timer: null
   }
 
 };

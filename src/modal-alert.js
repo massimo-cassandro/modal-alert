@@ -61,7 +61,7 @@ export default function (params) {
     }
 
     document.body.insertAdjacentHTML('beforeend',
-      `<dialog class="modal-alert" style='--malert-color: ${params.color}'>
+      `<dialog class="modal-alert modal-alert-${params.type}">
         <div class="malert-inner">
           <div class="malert-mark">
             ${marks[params.type]}
