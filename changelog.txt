@@ -2,3 +2,4 @@
      1.0.1 | 2023-01-23T20:26:22.453Z | Added `cssFile` option
      1.0.2 | 2023-01-24T09:32:56.308Z | Moved color definition to css
      1.0.3 | 2023-01-24T11:21:49.148Z | Added animation
+     1.0.4 | 2023-01-24T16:30:19.955Z | css update
