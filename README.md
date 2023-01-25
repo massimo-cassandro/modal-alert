@@ -41,9 +41,10 @@ mAlert({
   ok_btn_text       : 'OK',                // text for OK button (default `OK`)
   cancel_btn_text   : 'Annulla',           // text for cancel button (`confirm` only)
 
-  // callback function (`confirm` only)
-  // `result` is `true` if the user confirms, `false` if they cancel
+  // callback function
   // default `null`
+  // the `result` argument is available only for the confim type
+  // `result` is `true` if the user confirms, `false` if they cancel
   callback          : function(result) {}, 
 
   // ms for autoclose, null for disable

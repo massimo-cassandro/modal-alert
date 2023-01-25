@@ -68,7 +68,8 @@ setDefaults({
 document.querySelector('.demo-success').addEventListener('click', () => {
   mAlert({
     type  : 'success',
-    mes: 'Lorem ipsum dolor sit amet'
+    mes: 'Lorem ipsum dolor sit amet',
+    callback: () => alert('callback')
   });
 }, false);
 

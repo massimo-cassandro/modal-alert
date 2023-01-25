@@ -137,8 +137,8 @@ export default function (params) {
 
         dialogDismiss();
 
-        if(params.type === 'confirm' && params.callback && typeof params.callback === 'function') {
-          params.callback(btn.classList.contains('malert-ok'));
+        if(params.callback && typeof params.callback === 'function') {
+          params.callback(params.type === 'confirm'? btn.classList.contains('malert-ok') : undefined);
         }
 
       }, false);
