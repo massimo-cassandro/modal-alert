@@ -105,11 +105,16 @@ export default function (params) {
     }
 
     let timeoutID;
-    const dialogDismiss = () => {
+
+    const dialogDismiss = (btn) => {
       dialog.remove();
 
       if(params.onClose && typeof params.onClose === 'function') {
         params.onClose();
+      }
+
+      if(params.callback && typeof params.callback === 'function') {
+        params.callback((btn && params.type === 'confirm')? btn.classList.contains('malert-ok') : undefined);
       }
 
       if(timeoutID) {
@@ -127,20 +132,15 @@ export default function (params) {
       dialogDismiss();
     }, false);
 
-    dialog.addEventListener('cancel', () => {
-      dialogDismiss();
-    }, false);
+    // non necessario
+    // dialog.addEventListener('cancel', () => {
+    //   dialogDismiss();
+    // }, false);
 
     [ok_btn, cancel_btn].forEach(btn => {
 
       btn?.addEventListener('click', () => {
-
-        dialogDismiss();
-
-        if(params.callback && typeof params.callback === 'function') {
-          params.callback(params.type === 'confirm'? btn.classList.contains('malert-ok') : undefined);
-        }
-
+        dialogDismiss(btn);
       }, false);
 
     });
