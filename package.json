@@ -10,8 +10,8 @@
     "rollup": "npx rollup -c --watch",
     "css:dev": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --env development --watch",
     "css:prod": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --watch",
-    "UPD-version": "node ./node_modules/@massimo-cassandro/dev-utils/src/update-version.mjs",
-    "upd @m": "npm update @massimo-cassandro/linters-config @massimo-cassandro/dev-utils",
+    "UPD-version": "node ./node_modules/@massimo-cassandro/dev-utilities/src/update-version.mjs",
+    "upd @m": "npm update @massimo-cassandro/linters-config @massimo-cassandro/dev-utilities",
     "run demo server": "python3 -m http.server",
     "sass": "echo 'sass alternative (disabled)' # npx sass ./src/modal-alert.scss:./dist/modal-alert.css --load-path=./node_modules/ --style=compressed --watch",
     "autoprefixer": "echo 'autoprefixer for sass alternative (disabled)' # npx postcss ./dist/*.css --use autoprefixer --replace --verbose --no-map"
@@ -43,7 +43,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@massimo-cassandro/dev-utils": "^1.3.0",
+    "@massimo-cassandro/dev-utilities": "^1.8.3",
     "@massimo-cassandro/linters-config": "^1.0.0",
     "@rollup/plugin-terser": "^0.3.0",
     "autoprefixer": "^10.4.13",
