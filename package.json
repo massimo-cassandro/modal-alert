@@ -10,7 +10,7 @@
     "rollup": "npx rollup -c --watch",
     "css:dev": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --env development --watch",
     "css:prod": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --watch",
-    "UPD-version": "node ./node_modules/@massimo-cassandro/dev-utilities/src/update-version.mjs",
+    "UPD-version": "npx update-version",
     "upd @m": "npm update @massimo-cassandro/linters-config @massimo-cassandro/dev-utilities",
     "run demo server": "python3 -m http.server",
     "sass": "echo 'sass alternative (disabled)' # npx sass ./src/modal-alert.scss:./dist/modal-alert.css --load-path=./node_modules/ --style=compressed --watch",
