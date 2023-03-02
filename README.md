@@ -3,7 +3,7 @@ Vanilla JS modal alert
 
 ## Use:
 
-### add the css file to your page**
+### Add the css file to your page
 
 Optionally, add this custom properties to your page (see the `src/modal-alert.scss` file for default values):
 
@@ -26,7 +26,7 @@ Optionally, add this custom properties to your page (see the `src/modal-alert.sc
 * `--malert-heading-font-weigth`: font weigth for dialog heading
 * `--malert-body-font-family`: font family for dialog body text
 
-### add javascript
+### Add javascript
 
 ```javascript
 import mAlert from '@massimo-cassandro/modal-alert';
