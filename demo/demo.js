@@ -1,6 +1,6 @@
-import mAlert, {setDefaults} from '../dist/modal-alert.esm.min.js';
+import mAlert from '../dist/modal-alert.esm.min.js';
 
-setDefaults({
+const custom_defaults = {
 
   //settings to be applied to all dialog types
   globals: {
@@ -63,14 +63,14 @@ setDefaults({
     callback: null,
     timer: null,
   }
-});
+};
 
 document.querySelector('.demo-success').addEventListener('click', () => {
   mAlert({
     type  : 'success',
     mes: 'Lorem ipsum dolor sit amet',
     callback: () => alert('callback')
-  });
+  }, custom_defaults);
 }, false);
 
 document.querySelector('.demo-info').addEventListener('click', () => {
@@ -78,27 +78,27 @@ document.querySelector('.demo-info').addEventListener('click', () => {
     type  : 'info',
     title: 'Info',
     mes: '<strong>Lorem ipsum</strong> dolor sit amet'
-  });
+  }, custom_defaults);
 }, false);
 
 document.querySelector('.demo-error').addEventListener('click', () => {
   mAlert({
     type  : 'error'
-  });
+  }, custom_defaults);
 }, false);
 
 document.querySelector('.demo-warning').addEventListener('click', () => {
   mAlert({
     type  : 'warning',
     mes: '<p>Quo dolorum cumque quo placeat aperiam doloribus dolorum animi. Sunt et dolores quas autem. Porro inventore ratione. Ex facere doloremque. Consectetur enim dolor. Sint ut facere quidem et et dicta natus itaque.</p> <p>Odit in eos repellat exercitationem tempore blanditiis voluptate. Dignissimos est tempora qui ducimus at et expedita esse.</p>'
-  });
+  }, custom_defaults);
 }, false);
 
 document.querySelector('.demo-confirm').addEventListener('click', () => {
   mAlert({
     type  : 'confirm',
     callback: result => alert(`${result? 'OK' : 'Cancel'} button pressed`)
-  });
+  }, custom_defaults);
 }, false);
 
 
@@ -123,7 +123,7 @@ document.getElementById('test-form').addEventListener('submit', e => {
           alert('submit canceled');
         }
       }
-    });
+    }, custom_defaults);
   }
 
 }, false);
@@ -138,7 +138,7 @@ document.getElementById('test-form2').addEventListener('submit', e => {
       type  : 'error',
       title: 'Oh my! There is an error...',
       mes: 'Some message'
-    });
+    }, custom_defaults);
   }
 
 }, false);

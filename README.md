@@ -56,13 +56,15 @@ mAlert({
   heading_class     : 'text-success',
   ok_btn_class      : 'btn-success',
   cancel_btn_class  : 'btn-outline-warning'
-});
+}, custom_defaults);
 ```
 
 The default settings for each type can be viewed in the `./src/js/defaults.js` file.
 
-
 The special type `global`, if present, contains settings to be applied to all other types.
+
+The optional `custom defaults` object can be used to set custom defaults, without needing 
+to repeat them every time in the first options object.
 
 ### Customizing
 

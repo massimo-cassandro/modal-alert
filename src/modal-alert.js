@@ -8,23 +8,16 @@ import {defaults} from './js/defaults';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
 
-const marks = {
-  confirm: confirm_mark,
-  info: info_mark,
-  error: error_mark,
-  success: success_mark,
-  warning: warning_mark
-};
 
-let parsed_defaults = {};
+export default function (params, custom_defaults = {}) {
 
-export function setDefaults(custom_defaults = {}) {
-  Object.keys(defaults).forEach(item => {
-    parsed_defaults[item] = {...defaults[item], ...(custom_defaults[item]?? {})};
-  });
-}
-
-export default function (params) {
+  const marks = {
+    confirm: confirm_mark,
+    info: info_mark,
+    error: error_mark,
+    success: success_mark,
+    warning: warning_mark
+  };
 
   try {
 
@@ -35,7 +28,13 @@ export default function (params) {
     }
 
 
-    params = {...(parsed_defaults.globals?? defaults.globals), ...(parsed_defaults[params.type]?? defaults[params.type]), ...params};
+    params = {
+      ...(defaults.globals?? {}),
+      ...(custom_defaults.globals?? {}),
+      ...(defaults[params.type]?? {}),
+      ...(custom_defaults[params.type]?? {}),
+      ...params
+    };
 
     if(!params.type || Object.keys(defaults).filter(item => item !== 'global').indexOf(params.type) === -1) {
       throw 'Missing or incorrect `type` parameter';

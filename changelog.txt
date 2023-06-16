@@ -1,8 +1,9 @@
-2023-01-23T17:00:00.000Z |      1.0.0 | First release
-2023-01-23T20:26:22.453Z |      1.0.1 | Added `cssFile` option
-2023-01-24T09:32:56.308Z |      1.0.2 | Moved color definition to css
-2023-01-24T11:21:49.148Z |      1.0.3 | Added animation
-2023-01-24T16:30:19.955Z |      1.0.4 | css update
-2023-01-25T09:16:25.067Z |      1.0.5 | callback for all types
-2023-01-25T09:28:19.579Z |      1.0.6 | fix
-2023-03-02T10:01:16.415Z |      1.0.7 | Readme fix
+2023-01-23T17:00:00.000Z |            1.0.0 | First release
+2023-01-23T20:26:22.453Z |            1.0.1 | Added `cssFile` option
+2023-01-24T09:32:56.308Z |            1.0.2 | Moved color definition to css
+2023-01-24T11:21:49.148Z |            1.0.3 | Added animation
+2023-01-24T16:30:19.955Z |            1.0.4 | css update
+2023-01-25T09:16:25.067Z |            1.0.5 | callback for all types
+2023-01-25T09:28:19.579Z |            1.0.6 | fix
+2023-03-02T10:01:16.415Z |            1.0.7 | Readme fix
+2023-06-16T12:44:56.562Z |            2.0.0 | Removed `setDefaults` func
