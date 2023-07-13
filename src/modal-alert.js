@@ -64,9 +64,7 @@ export default function (params, custom_defaults = {}) {
     document.body.insertAdjacentHTML('beforeend',
       `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}">
         <div class="malert-inner">
-          <div class="malert-mark">
-            ${marks[params.type]}
-          </div>
+          ${params.showMarks? `<div class="malert-mark">${marks[params.type]}</div>` : ''}
           <div class="malert-body">
             <div class="malert-heading ${params.heading_class?? ''}">${params.title}</div>
             <div class="malert-text ${params.text_class?? ''}">${params.mes?? ''}</div>

@@ -25,6 +25,7 @@ Optionally, add this custom properties to your page (see the `src/modal-alert.sc
 * `--malert-heading-font-size`: font size for dialog heading
 * `--malert-heading-font-weigth`: font weigth for dialog heading
 * `--malert-body-font-family`: font family for dialog body text
+^ `--malert-background-color`: background color
 
 ### Add javascript
 

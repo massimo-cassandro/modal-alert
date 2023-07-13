@@ -6,7 +6,8 @@ export const defaults = {
     onOpen: null,
     onClose: null,
     cssFile: null,    // css file to be automatically loaded
-    animation: true
+    animation: true,
+    showMarks: true
   },
 
   success: {

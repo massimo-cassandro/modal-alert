@@ -1,7 +1,7 @@
 {
   "name": "@massimo-cassandro/modal-alert",
   "description": "Vanilla JS modal alert",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Massimo Cassandro",
   "main": "dist/modal-alert.esm.min.js",
@@ -43,8 +43,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@massimo-cassandro/dev-utilities": "^1.10.2",
-    "@massimo-cassandro/linters-config": "^1.0.0",
+    "@massimo-cassandro/dev-utilities": "^1.18.1",
+    "@massimo-cassandro/linters-config": "^1.4.6",
     "@rollup/plugin-terser": "^0.3.0",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",

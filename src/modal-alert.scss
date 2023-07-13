@@ -2,9 +2,9 @@
   width: 600px;
   max-width: 90vw;
   padding: 0;
+  background-color: var(--malert-background-color, #fff);
   border: none;
   border-radius: var(--malert-border-radius, 6px);
-
 
   // https://www.joshwcomeau.com/shadow-palette/
   --shadow-color: 0deg 0% 0%;
