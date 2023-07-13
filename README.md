@@ -70,3 +70,11 @@ to repeat them every time in the first options object.
 ### Customizing
 
 See demo
+
+## TODO
+
+* rivedere naming custom props (confusione tra color e bg, custom prrops specifiche per marks, marks size)
+* custom props non su :root?
+* aggiungere proprietà e opzioni per maggiore personalizzazione (padding, colori ecc) 
+* terminare pagina di setup
+* ottimizzare uso classi predefinite gestendole come variabili

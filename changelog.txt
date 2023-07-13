@@ -8,3 +8,4 @@
 2023-03-02T10:01:16.415Z |            1.0.7 | Readme fix
 2023-06-16T12:44:56.562Z |            2.0.0 | Removed `setDefaults` func
 2023-07-13T09:49:42.464Z |            2.1.0 | modal background color custom prop & showMarks option
+2023-07-13T10:11:06.797Z |            2.1.1 | Optional params.title

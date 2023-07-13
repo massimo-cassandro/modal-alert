@@ -57,16 +57,16 @@ export default function (params, custom_defaults = {}) {
     }
 
 
-    if(!params.title) {
-      throw '`title` parameter not present';
-    }
+    // if(!params.title) {
+    //   throw '`title` parameter not present';
+    // }
 
     document.body.insertAdjacentHTML('beforeend',
       `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}">
         <div class="malert-inner">
           ${params.showMarks? `<div class="malert-mark">${marks[params.type]}</div>` : ''}
           <div class="malert-body">
-            <div class="malert-heading ${params.heading_class?? ''}">${params.title}</div>
+            ${params.title? `<div class="malert-heading ${params.heading_class?? ''}">${params.title}</div>` : ''}
             <div class="malert-text ${params.text_class?? ''}">${params.mes?? ''}</div>
             <div class="malert-btns">
               <button type="button" class="malert-ok ${params.ok_btn_class}">
