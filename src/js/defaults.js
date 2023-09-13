@@ -7,57 +7,44 @@ export const defaults = {
     onClose: null,
     cssFile: null,    // css file to be automatically loaded
     animation: true,
-    showMarks: true
+    showMarks: true,
+    callback: null,
+    timer: null,
+    mes: null,
+    heading_class: null,
+    text_class: null,
+    cancel_focus: false
   },
 
   success: {
     title: 'Operazione completata',
-    mes: null,
     ok_btn_text: 'OK',
-    heading_class: null,
-    text_class: null,
     ok_btn_class: 'btn btn-success',
     timer: 4000 // ms
   },
   error: {
     title: 'Si è verificato un errore',
-    mes: null,
     ok_btn_text: 'OK',
-    heading_class: null,
-    text_class: null,
-    ok_btn_class: 'btn btn-error',
-    timer: null
+    ok_btn_class: 'btn btn-error'
   },
   warning: {
     title: 'Attenzione!',
-    mes: null,
     ok_btn_text: 'OK',
-    heading_class: null,
-    text_class: null,
-    ok_btn_class: 'btn btn-warning',
-    timer: null
+    ok_btn_class: 'btn btn-warning'
   },
   info: {
     title: null,
-    mes: null,
     ok_btn_text: 'OK',
-    heading_class: null,
-    text_class: null,
-    ok_btn_class: 'btn btn-info',
-    timer: null
+    ok_btn_class: 'btn btn-info'
   },
   confirm: {
     title: 'Confermi?',
-    mes: null,
     ok_btn_text: 'OK',
     cancel_btn_text: 'Annulla',
     cancel_focus: true, // false to give focus to the ok button
-    heading_class: null,
-    text_class: null,
     ok_btn_class: 'btn btn-confirm',
-    cancel_btn_class: 'btn btn-outline-confirm',
-    callback: null,
-    timer: null
+    cancel_btn_class: 'btn btn-outline-confirm'
+
   }
 
 };

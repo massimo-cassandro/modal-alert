@@ -40,7 +40,7 @@ export default function (params, custom_defaults = {}) {
       throw 'Missing or incorrect `type` parameter';
     }
 
-    if(params.type === 'confirm' && params.callback && typeof params.callback !== 'function') {
+    if(params.callback && typeof params.callback !== 'function') {
       throw 'Incorrect `callback` parameter';
     }
     if(params.onOpen && typeof params.onOpen !== 'function') {
