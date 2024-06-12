@@ -74,7 +74,7 @@
   background-color: var(--malert-color);
 
   svg {
-    width: 40px;
+    width: 100px;
     aspect-ratio: 1;
     fill: none;
     stroke: var(--malert-color-fg);
@@ -88,9 +88,9 @@
     align-items: flex-start;
     width: auto;
     padding: 1rem;
-    svg {
-      width: 100px;
-    }
+    // svg {
+    //   width: 100px;
+    // }
   }
 }
 

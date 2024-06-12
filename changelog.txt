@@ -9,3 +9,4 @@
 2023-06-16T12:44:56.562Z |            2.0.0 | Removed `setDefaults` func
 2023-07-13T09:49:42.464Z |            2.1.0 | modal background color custom prop & showMarks option
 2023-07-13T10:11:06.797Z |            2.1.1 | Optional params.title
+2024-06-12T13:33:35.264Z |            2.1.2 | css upd + upd stylelint / eslint
