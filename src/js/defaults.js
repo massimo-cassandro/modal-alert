@@ -13,7 +13,10 @@ export const defaults = {
     mes: null,
     heading_class: null,
     text_class: null,
-    cancel_focus: false
+    cancel_focus: false,
+
+    // extra btn markup, ignored on confirm
+    extra_btn: null
   },
 
   success: {

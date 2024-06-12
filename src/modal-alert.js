@@ -76,7 +76,7 @@ export default function (params, custom_defaults = {}) {
                 `<button type="button" class="malert-cancel ${params.cancel_btn_class}">
                   ${params.cancel_btn_text}
                 </button>`
-              : ''}
+              : params.extra_btn?? ''}
             </div>
           </div>
         </div>

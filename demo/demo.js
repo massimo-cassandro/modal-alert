@@ -87,6 +87,13 @@ document.querySelector('.demo-error').addEventListener('click', () => {
   }, custom_defaults);
 }, false);
 
+document.querySelector('.demo-error-extra-btn').addEventListener('click', () => {
+  mAlert({
+    type  : 'error',
+    extra_btn: '<button type="button" class="">Extra btn</button>'
+  }, custom_defaults);
+}, false);
+
 document.querySelector('.demo-warning').addEventListener('click', () => {
   mAlert({
     type  : 'warning',
