@@ -58,8 +58,8 @@ const custom_defaults = {
     cancel_focus: true, // false to give focus to the ok button
     heading_class: null,
     text_class: null,
-    ok_btn_class: 'btn',
-    cancel_btn_class: 'btn btn-outline',
+    ok_btn_class: 'btn-outline btn-confirm',
+    cancel_btn_class: 'btn btn-confirm',
     callback: null,
     timer: null,
   }
@@ -90,7 +90,10 @@ document.querySelector('.demo-error').addEventListener('click', () => {
 document.querySelector('.demo-error-extra-btn').addEventListener('click', () => {
   mAlert({
     type  : 'error',
-    extra_btn: '<button type="button" class="">Extra btn</button>'
+    ok_btn_class: 'btn btn-error btn-outline',
+    extra_btn: '<button type="button" class="btn btn-error extra-btn">Extra btn</button>',
+    extra_btn_selector: 'extra-btn',
+    extra_btn_focus: true
   }, custom_defaults);
 }, false);
 

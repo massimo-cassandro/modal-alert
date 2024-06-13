@@ -91,8 +91,12 @@ export default function (params, custom_defaults = {}) {
     const ok_btn = dialog.querySelector('.malert-ok'),
       cancel_btn = dialog.querySelector('.malert-cancel');
 
-    if(cancel_btn && params.cancel_focus) {
+    if(cancel_btn && params.cancel_focus) { // confirm
       cancel_btn.focus();
+
+    } else if(params.extra_btn && params.extra_btn_focus) {
+      dialog.querySelector('.' + params.extra_btn_selector)?.focus();
+
     } else {
       ok_btn.focus();
     }

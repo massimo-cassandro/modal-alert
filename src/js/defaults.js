@@ -13,10 +13,11 @@ export const defaults = {
     mes: null,
     heading_class: null,
     text_class: null,
-    cancel_focus: false,
 
     // extra btn markup, ignored on confirm
-    extra_btn: null
+    extra_btn: null,
+    extra_btn_selector: null,
+    extra_btn_focus: true
   },
 
   success: {
@@ -45,9 +46,8 @@ export const defaults = {
     ok_btn_text: 'OK',
     cancel_btn_text: 'Annulla',
     cancel_focus: true, // false to give focus to the ok button
-    ok_btn_class: 'btn btn-confirm',
-    cancel_btn_class: 'btn btn-outline-confirm'
-
+    ok_btn_class: 'btn btn-outline-confirm',
+    cancel_btn_class: 'btn btn-confirm'
   }
 
 };
