@@ -95,7 +95,7 @@ export default function (params, custom_defaults = {}) {
       cancel_btn.focus();
 
     } else if(params.extra_btn && params.extra_btn_focus) {
-      dialog.querySelector('.' + params.extra_btn_selector)?.focus();
+      dialog.querySelector(params.extra_btn_selector)?.focus();
 
     } else {
       ok_btn.focus();

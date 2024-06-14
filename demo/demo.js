@@ -92,7 +92,7 @@ document.querySelector('.demo-error-extra-btn').addEventListener('click', () => 
     type  : 'error',
     ok_btn_class: 'btn btn-error btn-outline',
     extra_btn: '<button type="button" class="btn btn-error extra-btn">Extra btn</button>',
-    extra_btn_selector: 'extra-btn',
+    extra_btn_selector: '.extra-btn',
     extra_btn_focus: true
   }, custom_defaults);
 }, false);
