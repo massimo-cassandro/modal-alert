@@ -1,3 +1,5 @@
+@import '../src/modal-alert.css';
+
 :root {
   /* comment to use defaults */
   --malert-success-color: #09544b;

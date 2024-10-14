@@ -4,9 +4,7 @@ export default [
   ...eslint_config,
   {
     files: ['src/*.js'],
-    ignores: [
-      'dist/**/*.js'
-    ],
+
   }
 ];
 

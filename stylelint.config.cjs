@@ -2,6 +2,6 @@
 
 module.exports = {
  extends: ['@massimo-cassandro/stylelint-config'],
- ignoreFiles: ['./dist/**/*.css']
+ ignoreFiles: []
 };
 

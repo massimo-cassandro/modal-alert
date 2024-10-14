@@ -1,25 +1,9 @@
-import confirm_mark from './svg/confirm.svg';
-import info_mark from './svg/info.svg';
-import error_mark from './svg/error.svg';
-import success_mark from './svg/success.svg';
-import warning_mark from './svg/warning.svg';
-
-import {defaults} from './js/defaults';
+import { marks } from './marks.js';
+import {defaults} from './defaults.js';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
 
-// TODO check per tutti gli elelenti di extra_btn
-// TODO eliminare dist (come incorporare svg?)
-
 export default function (params, custom_defaults = {}) {
-
-  const marks = {
-    confirm: confirm_mark,
-    info: info_mark,
-    error: error_mark,
-    success: success_mark,
-    warning: warning_mark
-  };
 
   try {
 
@@ -50,6 +34,9 @@ export default function (params, custom_defaults = {}) {
     }
     if(params.onClose && typeof params.onClose !== 'function') {
       throw 'Incorrect `onClose` parameter';
+    }
+    if(params.extra_btn && !params.extra_btn_selector) {
+      throw 'Incorrect `extra_btn` parameter: missing `extra_btn_selector`';
     }
 
     if(params.cssFile && !document.querySelector(`link[href='${params.cssFile}']`)) {
@@ -118,14 +105,14 @@ export default function (params, custom_defaults = {}) {
         params.onClose();
       }
 
-      // Se presente, l'argomento del callback è btn.dataset.confirmResult
-      // altrimenti, se il modal è di tipo confirm true se è il pulsante OK, false in caso contrario
-      // altrimenti undefined
+      // If present, the callback argument is `btn.dataset.malertResult`
+      // Otherwise, if the modal type is `confirm`, it is `true` for the OK button, `false` for the Cancel button
+      // Otherwise, for all other modal types, it is `undefined`
       if(params.callback && typeof params.callback === 'function') {
         let arg;
         if(btn) {
-          if(btn.dataset?.confirmResult) {
-            arg = btn.dataset.confirmResult;
+          if(btn.dataset?.malertResult) {
+            arg = btn.dataset.malertResult;
 
           } else if(params.type === 'confirm') {
             arg = btn.classList.contains('malert-ok');

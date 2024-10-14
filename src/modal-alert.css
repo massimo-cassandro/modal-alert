@@ -6,19 +6,19 @@
   border: none;
   border-radius: var(--malert-border-radius, 6px);
 
-  // https://www.joshwcomeau.com/shadow-palette/
-  --shadow-color: 0deg 0% 0%;
-  --box-shadow:
-    0 .4px 04px hsl(var(--shadow-color) / .15),
-    -.3px 3px 3.3px -.5px hsl(var(--shadow-color) / .15),
-    -.5px 6.1px 6.6px -.9px hsl(var(--shadow-color) / .14),
-    -.9px 11.2px 12.1px -1.4px hsl(var(--shadow-color) / .14),
-    -1.6px 19.5px 21.1px -1.9px hsl(var(--shadow-color) / .13),
-    -2.7px 32.7px 35.4px -2.3px hsl(var(--shadow-color) / .13),
-    -4.3px 52px 56.4px -2.8px hsl(var(--shadow-color) / .12);
+  /* https://www.joshwcomeau.com/shadow-palette/ */
+  --default-shadow-color: 0deg 0% 0%;
+  --default-box-shadow:
+    0 .4px 04px hsl(var(--default-shadow-color) / .15),
+    -.3px 3px 3.3px -.5px hsl(var(--default-shadow-color) / .15),
+    -.5px 6.1px 6.6px -.9px hsl(var(--default-shadow-color) / .14),
+    -.9px 11.2px 12.1px -1.4px hsl(var(--default-shadow-color) / .14),
+    -1.6px 19.5px 21.1px -1.9px hsl(var(--default-shadow-color) / .13),
+    -2.7px 32.7px 35.4px -2.3px hsl(var(--default-shadow-color) / .13),
+    -4.3px 52px 56.4px -2.8px hsl(var(--default-shadow-color) / .12);
 
-  box-shadow: var(--malert-box-shadow, var(--box-shadow));
-  // box-shadow: 2px 2px 12px #000;
+  box-shadow: var(--malert-box-shadow, var(--default-box-shadow));
+  /* box-shadow: 2px 2px 12px #000; */
 
   &::backdrop {
     overscroll-behavior: contain;
@@ -54,7 +54,7 @@
 .malert-inner {
   display: flex;
   flex-flow: column nowrap;
-  // gap: .7rem;
+  /* gap: .7rem; */
   align-items: stretch;
   justify-content: flex-start;
 
@@ -88,9 +88,9 @@
     align-items: flex-start;
     width: auto;
     padding: 1rem;
-    // svg {
-    //   width: 100px;
-    // }
+    /* svg {
+      width: 100px;
+    } */
   }
 }
 

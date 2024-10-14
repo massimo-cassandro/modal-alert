@@ -23,31 +23,31 @@ export const defaults = {
   success: {
     title: 'Operazione completata',
     ok_btn_text: 'OK',
-    ok_btn_class: 'btn btn-success',
+    ok_btn_class: 'btn',
     timer: 4000 // ms
   },
   error: {
     title: 'Si è verificato un errore',
     ok_btn_text: 'OK',
-    ok_btn_class: 'btn btn-error'
+    ok_btn_class: 'btn'
   },
   warning: {
     title: 'Attenzione!',
     ok_btn_text: 'OK',
-    ok_btn_class: 'btn btn-warning'
+    ok_btn_class: 'btn'
   },
   info: {
     title: null,
     ok_btn_text: 'OK',
-    ok_btn_class: 'btn btn-info'
+    ok_btn_class: 'btn'
   },
   confirm: {
     title: 'Confermi?',
     ok_btn_text: 'OK',
     cancel_btn_text: 'Annulla',
     cancel_focus: true, // false to give focus to the ok button
-    ok_btn_class: 'btn btn-outline-confirm',
-    cancel_btn_class: 'btn btn-confirm'
+    ok_btn_class: 'btn btn-outline',
+    cancel_btn_class: 'btn'
   }
 
 };

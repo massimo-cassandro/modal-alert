@@ -1,54 +1,35 @@
 {
   "name": "@massimo-cassandro/modal-alert",
   "description": "Vanilla JS modal alert",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "license": "MIT",
   "author": "Massimo Cassandro",
-  "main": "dist/modal-alert.esm.min.js",
+  "main": "src/modal-alert.js",
+  "style": "src/modal-alert.css",
   "type": "module",
   "scripts": {
-    "rollup": "npx rollup -c --watch",
-    "css:dev": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --env development --watch",
-    "css:prod": "postcss ./src/modal-alert.scss --output ./dist/modal-alert.css --verbose --watch",
     "UPD-version": "npx update-version",
     "upd @m": "npx upd@m",
+    "build svg-to-js file": "node ./src/svg/svg-to-js.mjs",
     "npm-publish": "npm publish",
-    "run demo server": "python3 -m http.server",
-    "sass": "echo 'sass alternative (disabled)' # npx sass ./src/modal-alert.scss:./dist/modal-alert.css --load-path=./node_modules/ --style=compressed --watch",
-    "autoprefixer": "echo 'autoprefixer for sass alternative (disabled)' # npx postcss ./dist/*.css --use autoprefixer --replace --verbose --no-map"
+    "run demo server": "python3 -m http.server"
   },
-  "browserslist": [
-    "last 3 version",
-    "not dead",
-    "> 3% in IT"
-  ],
   "files": [
-    "src/**/*.{svg,scss,css,js,map}",
-    "dist/**/*.{css,js,map}"
+    "src/*.{css,js}"
   ],
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@eslint/js": "^9.4.0",
-    "@massimo-cassandro/dev-updater": "^1.0.2",
+    "@eslint/js": "^9.12.0",
+    "@massimo-cassandro/dev-updater": "^1.0.4",
     "@massimo-cassandro/eslint-config": "^2.0.4",
-    "@massimo-cassandro/stylelint-config": "^1.1.3",
-    "@rollup/plugin-terser": "^0.3.0",
-    "@stylistic/stylelint-plugin": "^2.1.2",
-    "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.14",
-    "eslint": "^9.4.0",
-    "globals": "^15.4.0",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "postcss-nested": "^6.0.0",
-    "postcss-scss": "^4.0.6",
-    "postcss-sort-media-queries": "^4.3.0",
-    "rollup": "^3.10.0",
-    "rollup-plugin-svg": "^2.0.0",
-    "stylelint": "^16.6.1",
+    "@massimo-cassandro/stylelint-config": "^1.1.7",
+    "@stylistic/stylelint-plugin": "^3.1.1",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0",
+    "stylelint": "^16.10.0",
     "stylelint-config-css-modules": "^4.4.0",
-    "stylelint-config-twbs-bootstrap": "^14.1.0"
+    "stylelint-config-twbs-bootstrap": "^15.1.0"
   }
 }

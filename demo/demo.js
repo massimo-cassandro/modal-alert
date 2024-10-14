@@ -1,4 +1,4 @@
-import mAlert from '../dist/modal-alert.esm.min.js';
+import mAlert from '../src/modal-alert.js';
 
 const custom_defaults = {
 
@@ -12,7 +12,7 @@ const custom_defaults = {
       // console.log('close'); // eslint-disable-line
       document.body.classList.remove('modal-alert-is-open');
     },
-    cssFile: '/dist/modal-alert.css'
+    cssFile: null
   },
 
   success: {
@@ -58,8 +58,8 @@ const custom_defaults = {
     cancel_focus: true, // false to give focus to the ok button
     heading_class: null,
     text_class: null,
-    ok_btn_class: 'btn-outline btn-confirm',
-    cancel_btn_class: 'btn btn-confirm',
+    ok_btn_class: 'btn btn-outline',
+    cancel_btn_class: 'btn',
     callback: null,
     timer: null,
   }
@@ -90,10 +90,11 @@ document.querySelector('.demo-error').addEventListener('click', () => {
 document.querySelector('.demo-error-extra-btn').addEventListener('click', () => {
   mAlert({
     type  : 'error',
-    ok_btn_class: 'btn btn-error btn-outline',
-    extra_btn: '<button type="button" class="btn btn-error extra-btn">Extra btn</button>',
+    ok_btn_class: 'btn btn-error btn btn-outline',
+    extra_btn: '<button type="button" data-malert-result="extra-btn-result" class="btn btn-error extra-btn">Extra btn</button>',
     extra_btn_selector: '.extra-btn',
-    extra_btn_focus: true
+    extra_btn_focus: true,
+    callback: result => alert(result === 'extra-btn-result'? 'Extra button pressed' : 'OK button pressed')
   }, custom_defaults);
 }, false);
 
