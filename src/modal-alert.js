@@ -8,6 +8,8 @@ import {defaults} from './js/defaults';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
 
+// TODO check per tutti gli elelenti di extra_btn
+// TODO eliminare dist (come incorporare svg?)
 
 export default function (params, custom_defaults = {}) {
 
@@ -76,7 +78,8 @@ export default function (params, custom_defaults = {}) {
                 `<button type="button" class="malert-cancel ${params.cancel_btn_class}">
                   ${params.cancel_btn_text}
                 </button>`
-              : params.extra_btn?? ''}
+              : ''}
+              ${params.extra_btn?? ''}
             </div>
           </div>
         </div>
@@ -89,13 +92,14 @@ export default function (params, custom_defaults = {}) {
 
     // btn focus
     const ok_btn = dialog.querySelector('.malert-ok'),
-      cancel_btn = dialog.querySelector('.malert-cancel');
+      cancel_btn = dialog.querySelector('.malert-cancel'),
+      extra_btn = (params.extra_btn && params.extra_btn_selector)? dialog.querySelector(params.extra_btn_selector) : null;
 
-    if(cancel_btn && params.cancel_focus) { // confirm
+    if(extra_btn && params.extra_btn_focus) {
+      extra_btn.focus();
+
+    } else if(cancel_btn && params.cancel_focus) { // confirm
       cancel_btn.focus();
-
-    } else if(params.extra_btn && params.extra_btn_focus) {
-      dialog.querySelector(params.extra_btn_selector)?.focus();
 
     } else {
       ok_btn.focus();
@@ -114,8 +118,22 @@ export default function (params, custom_defaults = {}) {
         params.onClose();
       }
 
+      // Se presente, l'argomento del callback è btn.dataset.confirmResult
+      // altrimenti, se il modal è di tipo confirm true se è il pulsante OK, false in caso contrario
+      // altrimenti undefined
       if(params.callback && typeof params.callback === 'function') {
-        params.callback((btn && params.type === 'confirm')? btn.classList.contains('malert-ok') : undefined);
+        let arg;
+        if(btn) {
+          if(btn.dataset.confirmResult) {
+            arg = btn.dataset.confirmResult;
+          } else if(params.type === 'confirm') {
+            arg = btn.classList.contains('malert-ok');
+          }
+        } else {
+          arg = undefined;
+        }
+
+        params.callback(arg);
       }
 
       if(timeoutID) {
@@ -133,12 +151,7 @@ export default function (params, custom_defaults = {}) {
       dialogDismiss();
     }, false);
 
-    // non necessario
-    // dialog.addEventListener('cancel', () => {
-    //   dialogDismiss();
-    // }, false);
-
-    [ok_btn, cancel_btn].forEach(btn => {
+    [ok_btn, cancel_btn, ...(extra_btn? [extra_btn] : [])].forEach(btn => {
 
       btn?.addEventListener('click', () => {
         dialogDismiss(btn);
