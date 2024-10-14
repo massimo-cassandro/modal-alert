@@ -1,6 +1,8 @@
 # modal-alert
 Vanilla JS modal alert
 
+Demo: <https://massimo-cassandro.github.io/modal-alert/demo/>
+
 ## Use:
 
 ### Add the css file to your page
@@ -69,7 +71,7 @@ to repeat them every time in the first options object.
 
 ### Customizing
 
-See demo
+See demo sources.
 
 ## TODO
 
