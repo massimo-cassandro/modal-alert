@@ -124,8 +124,9 @@ export default function (params, custom_defaults = {}) {
       if(params.callback && typeof params.callback === 'function') {
         let arg;
         if(btn) {
-          if(btn.dataset.confirmResult) {
+          if(btn.dataset?.confirmResult) {
             arg = btn.dataset.confirmResult;
+
           } else if(params.type === 'confirm') {
             arg = btn.classList.contains('malert-ok');
           }
