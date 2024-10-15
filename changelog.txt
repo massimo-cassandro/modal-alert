@@ -17,3 +17,4 @@
 2024-10-14T10:10:50.155Z |            2.4.0 | extra btn
 2024-10-14T12:21:31.205Z |            2.4.1 | fix
 2024-10-14T17:01:14.718Z |            2.5.0 | Removed rollup and dist release (source only). Removed scss: css only
+2024-10-15T08:17:47.809Z |            2.5.1 | Some comments
