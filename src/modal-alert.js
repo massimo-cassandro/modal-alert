@@ -3,6 +3,8 @@ import {defaults} from './defaults.js';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
 
+// TODO rewrite as async
+
 export default function (params, custom_defaults = {}) {
 
   try {
