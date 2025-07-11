@@ -43,6 +43,7 @@ export const defaults = {
   },
   confirm: {
     title: 'Confermi?',
+    use_warning_icon: false, // se true usa l'icona warning
     ok_btn_text: 'OK',
     cancel_btn_text: 'Annulla',
     cancel_focus: true, // false to give focus to the ok button

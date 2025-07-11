@@ -45,6 +45,12 @@ export default function (params, custom_defaults = {}) {
       );
     }
 
+    // icona warning opzionale per confirm
+    let icon = marks[params.type];
+    if(params.type === 'confirm' && params.use_warning_icon) {
+      icon = marks.warning;
+    }
+
 
     // if(!params.title) {
     //   throw '`title` parameter not present';
@@ -53,7 +59,7 @@ export default function (params, custom_defaults = {}) {
     document.body.insertAdjacentHTML('beforeend',
       `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}">
         <div class="malert-inner">
-          ${params.showMarks? `<div class="malert-mark">${marks[params.type]}</div>` : ''}
+          ${params.showMarks? `<div class="malert-mark">${icon}</div>` : ''}
           <div class="malert-body">
             ${params.title? `<div class="malert-heading ${params.heading_class?? ''}">${params.title}</div>` : ''}
             <div class="malert-text ${params.text_class?? ''}">${params.mes?? ''}</div>
