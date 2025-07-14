@@ -19,3 +19,4 @@
 2024-10-14T17:01:14.718Z |            2.5.0 | Removed rollup and dist release (source only). Removed scss: css only
 2024-10-15T08:17:47.809Z |            2.5.1 | Some comments
 2025-07-11T09:52:44.009Z |            2.6.0 | `use_warning_icon` option
+2025-07-14T11:33:47.780Z |            2.6.1 | fix
