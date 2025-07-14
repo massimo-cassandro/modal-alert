@@ -97,7 +97,7 @@ export default function (params, custom_defaults = {}) {
       cancel_btn.focus();
 
     } else {
-      ok_btn.focus();
+      ok_btn?.focus();
     }
 
     if(params.onOpen && typeof params.onOpen === 'function') {
