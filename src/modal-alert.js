@@ -1,11 +1,11 @@
-import { marks } from './marks.js';
+import { marks as default_marks } from './marks.js';
 import {defaults} from './defaults.js';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement
 
 // TODO rewrite as async
 
-export default function (params, custom_defaults = {}) {
+export default function (params, custom_defaults = {}, marks = default_marks) {
 
   try {
 

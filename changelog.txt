@@ -20,3 +20,4 @@
 2024-10-15T08:17:47.809Z |            2.5.1 | Some comments
 2025-07-11T09:52:44.009Z |            2.6.0 | `use_warning_icon` option
 2025-07-14T11:33:47.780Z |            2.6.1 | fix
+2025-08-13T15:58:37.870Z |            2.7.0 | custom marks option
