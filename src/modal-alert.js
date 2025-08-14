@@ -57,9 +57,10 @@ export default function (params, custom_defaults = {}, marks = default_marks) {
     // if(!params.title) {
     //   throw '`title` parameter not present';
     // }
+    const closedByAny = ['success', 'info'].indexOf(params.type) !== -1? ' closedBy="any"' : '';
 
     document.body.insertAdjacentHTML('beforeend',
-      `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}">
+      `<dialog class="modal-alert modal-alert-${params.type}${params.animation? ' modal-alert-animated' : ''}"${closedByAny}>
         <div class="malert-inner">
           ${params.showMarks? `<div class="malert-mark">${icon}</div>` : ''}
           <div class="malert-body">
