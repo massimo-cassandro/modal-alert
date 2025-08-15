@@ -24,6 +24,11 @@ export default function (params, custom_defaults = {}, marks = default_marks) {
       ...params
     };
 
+    // per compatibilità
+    if(params.type === 'danger') {
+      params.type = 'error';
+    }
+
     if(!params.type || Object.keys(defaults).filter(item => item !== 'global').indexOf(params.type) === -1) {
       throw 'Missing or incorrect `type` parameter';
     }

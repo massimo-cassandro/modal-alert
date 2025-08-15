@@ -22,3 +22,4 @@
 2025-07-14T11:33:47.780Z |            2.6.1 | fix
 2025-08-13T15:58:37.870Z |            2.7.0 | custom marks option
 2025-08-14T17:16:03.144Z |            2.7.1 | `closedBy=any` added for info and success alerts
+2025-08-15T13:48:10.973Z |            2.7.2 | added type='danger' (alias for 'error')

@@ -1,7 +1,7 @@
 {
   "name": "@massimo-cassandro/modal-alert",
   "description": "Vanilla JS modal alert",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "license": "MIT",
   "author": "Massimo Cassandro",
   "main": "src/modal-alert.js",
