@@ -1,6 +1,8 @@
 # modal-alert
 Vanilla JS modal alert
 
+> This package has been moved to <https://github.com/massimo-cassandro/minimo>
+
 Demo: <https://massimo-cassandro.github.io/modal-alert/demo/>
 
 ## Use:
